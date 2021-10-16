@@ -1,0 +1,17 @@
+{
+  "all-employees-shifts": [
+    {
+      "id": 1,
+      "name": "Marko Markovic",
+      "email": "marko.markovic@test.com",
+      "hourlyRate": 8,
+      "overtimeHourlyRate": 1,
+      "status": "active"
+    }
+  ],
+  "employee-shifts": [{
+    "employeeId": 1,
+    "clockInTime": "Sat Oct 16 2021 23:31:06 GMT+0200",
+    "clockOutTime": "Sat Oct 17 2021 07:31:06 GMT+0200"
+  }]
+}

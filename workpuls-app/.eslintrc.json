@@ -19,6 +19,7 @@
         "@typescript-eslint"
     ],
     "rules": {
+        "class-methods-use-this": ["error", { "exceptMethods": ["handle*"] }],
         "max-len": [2, 150, 4, {"ignoreUrls": true}],
         "import/prefer-default-export": "off",
         "import/extensions": [
@@ -30,7 +31,9 @@
               "ts": "never",
               "tsx": "never"
             }
-         ]
+         ],
+        "no-param-reassign": 0,
+        "no-useless-constructor": "off"
     },
     "settings": {
         "import/resolver": {

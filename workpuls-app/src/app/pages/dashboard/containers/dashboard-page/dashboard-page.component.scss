@@ -1,0 +1,57 @@
+@import 'src/app/styles/variables';
+
+.charts-wrapper {
+  display: flex;
+  margin: 0 8px;
+
+  @media (max-width: $normal) {
+    flex-wrap: wrap;
+  }
+}
+
+.chart {
+  width: 100%;
+
+  @media (max-width: $normal) {
+    width: 50%;
+  }
+
+  @media (max-width: $small) {
+    width: 100%;
+  }
+}
+
+::ng-deep {
+  .table {
+    display: flex;
+    flex-flow: wrap;
+    margin: 20px 24px;
+  }
+
+  table,
+  mat-paginator {
+    width: 100%;
+  }
+
+  mat-card {
+    margin: 20px 24px;
+    display: flex !important;
+    justify-content: space-around;
+  }
+}
+
+.spinner {
+  position: fixed;
+  margin: auto;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  &-wrap {
+    min-height: -webkit-fill-available;
+    position: absolute;
+    background-color: rgb(0 0 0 / 54%);
+    min-width: -webkit-fill-available;
+    top: 0;
+  }
+}

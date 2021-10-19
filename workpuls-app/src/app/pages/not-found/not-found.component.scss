@@ -1,0 +1,77 @@
+@import 'src/app/styles/colors';
+@import 'src/app/styles/font';
+
+.not-found-page {
+  background-color: $blue;
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+
+  &__content {
+    width: 455px;
+  }
+
+  &__title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 42px;
+    margin-bottom: 67px;
+
+    &-text {
+      color: $white;
+      font-weight: 500;
+      font-size: 32px;
+      letter-spacing: 0.6px;
+    }
+  }
+
+  &__card {
+    box-sizing: border-box;
+    width: 100%;
+    height: 70vh;
+    padding: 56px 0 36px 0;
+    margin: 0;
+
+    &-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    &-title {
+      font-size: 107px;
+      font-weight: 500;
+      color: $blue;
+      line-height: 108px;
+      text-align: center;
+    }
+
+    &-sub-title {
+      margin-top: 30px;
+      font-size: $fs-normal;
+      font-weight: 400;
+      letter-spacing: -0.05px;
+      color: $blue;
+      text-align: center;
+    }
+
+    &-sub-title-second {
+      margin-top: 30px;
+      font-size: $fs-normal;
+      font-weight: 400;
+      letter-spacing: -0.2px;
+      color: $grey;
+      text-align: center;
+    }
+
+    &-button {
+      margin-top: 40px;
+      margin-left: 156px;
+      width: 150px;
+      line-height: 40px;
+      letter-spacing: 1px;
+    }
+  }
+}

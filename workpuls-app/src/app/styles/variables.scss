@@ -1,0 +1,26 @@
+@import 'colors';
+
+//== Viewports
+
+$extra-small: 576px;
+$small: 576px;
+$medium: 768px;
+$normal: 1024px;
+$large: 992px;
+$extra-large: 1200px;
+
+//== Material Toolbar
+
+$toolbar-title-font-color: $light-grey;
+$toolbar-button-font-color: $white;
+$toolbar-button-background-color: $pink;
+$toolbar-button-background-color-active: $dark-pink;
+
+//== Header
+
+$header-background-color: $blue;
+$header-height: 64px;
+$header-button-background-color: $blue;
+$header-button-background-color-hover: $black-08;
+$header-button-font-color: $white;
+$header-title-font-color: $white;

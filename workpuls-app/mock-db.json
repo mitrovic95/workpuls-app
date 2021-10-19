@@ -1,11 +1,83 @@
 {
-  "all-employees-shifts": [
+  "all-employees": [
     {
       "id": 1,
       "name": "Marko Markovic",
       "email": "marko.markovic@test.com",
       "hourlyRate": 8,
       "overtimeHourlyRate": 1,
+      "status": "active"
+    },
+    {
+      "id": 2,
+      "name": "Petar Petrovic",
+      "email": "petar.petrovic@test.com",
+      "hourlyRate": 15,
+      "overtimeHourlyRate": 10,
+      "status": "active"
+    },
+    {
+      "id": 3,
+      "name": "Darko Darkovic",
+      "email": "darko.darkovic@test.com",
+      "hourlyRate": 28,
+      "overtimeHourlyRate": 21,
+      "status": "active"
+    },
+    {
+      "id": 4,
+      "name": "Mirko Mirkovic",
+      "email": "mirko.mirkovic@test.com",
+      "hourlyRate": 42,
+      "overtimeHourlyRate": 20,
+      "status": "active"
+    },
+    {
+      "id": 5,
+      "name": "Dejan Dejanovic",
+      "email": "dejan.dejanovic@test.com",
+      "hourlyRate": 108,
+      "overtimeHourlyRate": 200,
+      "status": "active"
+    },
+    {
+      "id": 6,
+      "name": "Nemanja Nemanjovic",
+      "email": "nemanja.nemanjovic@test.com",
+      "hourlyRate": 54,
+      "overtimeHourlyRate": 24,
+      "status": "active"
+    },
+    {
+      "id": 7,
+      "name": "Mladen Mladenovic",
+      "email": "mladen.mladenovic@test.com",
+      "hourlyRate": 38,
+      "overtimeHourlyRate": 18,
+      "status": "active"
+    },
+    {
+      "id": 8,
+      "name": "Rastko Rastkovic",
+      "email": "rastko.rastkovic@test.com",
+      "hourlyRate": 208,
+      "overtimeHourlyRate": 164,
+      "status": "active"
+    },
+    {
+      "id": 9,
+      "name": "Nikola Nikolic",
+      "email": "nikola.nikolic@test.com",
+      "hourlyRate": 256,
+      "overtimeHourlyRate": 40,
+      "status": "active"
+    },
+    {
+      "id": 10,
+      "name": "Danilo Danilovic",
+      "email": "danilo.danilovic@test.com",
+      "hourlyRate": 72,
+      "overtimeHourlyRate": 210,
       "status": "active"
     }
   ],

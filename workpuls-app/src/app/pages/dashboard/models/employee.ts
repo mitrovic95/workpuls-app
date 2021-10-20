@@ -1,3 +1,5 @@
+import { Shift } from './shift';
+
 export interface Employee {
   id: number;
   name: string;
@@ -6,4 +8,5 @@ export interface Employee {
   overtimeHourlyRate: number;
   status: string;
   totalClokedIn: number;
+  shifts: Shift[];
 }

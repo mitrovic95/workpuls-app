@@ -1,0 +1,10 @@
+<div class="modal-wrap" *ngIf="data.employees.length">
+    <modal-content *ngFor="let employee of data.employees" [employee]="employee" [title]="data.title" (dateEvent)="dateChanged($event)"></modal-content>
+</div>
+<div class="modal-validation" *ngIf="!data.employees.length">
+    No employee seleceted. Please cancel and select at least one.
+</div>
+<div mat-dialog-actions>
+    <button *ngIf="data.employees.length" mat-button class="btn btn-save" cdkFocusInitial>Save</button>
+    <button mat-button class="btn btn-cancel" (click)="onCancelClick()">Cancel</button>
+</div>

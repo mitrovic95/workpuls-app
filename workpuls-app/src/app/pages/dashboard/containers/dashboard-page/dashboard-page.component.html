@@ -55,7 +55,7 @@
           (click)="selection.toggle(row)">
       </tr>
     </table>
-    <div *ngIf="dataSource.data.length === 0">
+    <div *ngIf="!dataSource.data.length">
       No Records Found!
     </div>
   

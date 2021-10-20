@@ -1,20 +1,16 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'dashboard-info',
   templateUrl: './dashboard-info.component.html',
   styleUrls: ['./dashboard-info.component.scss'],
 })
-export class DashboardInfoComponent implements OnInit {
-  @Input() numberOfEmployees: number = 0;
+export class DashboardInfoComponent {
+  @Input() numberOfEmployees = 0;
 
-  @Input() totalAmountPaidForRegularHours: number = 0;
+  @Input() totalAmountPaidForRegularHours = 0;
 
-  @Input() totalOvertimeAmountPaidForOvertimeHours: number = 0;
+  @Input() totalOvertimeAmountPaidForOvertimeHours = 0;
 
-  @Input() totalClockedInTime: number = 0;
-
-  constructor() {}
-
-  ngOnInit(): void {}
+  @Input() totalClockedInTime = 0;
 }

@@ -1,0 +1,33 @@
+@import '../../../../../../styles/colors';
+.btn {
+  min-width: 6rem;
+  &-save {
+    background: $dark-grey;
+    color: $white;
+  }
+
+  &-cancel {
+    border: 2px solid $black-08;
+  }
+}
+
+.mat-dialog-actions {
+  justify-content: flex-end;
+  padding: 30px;
+}
+
+.modal {
+  &-wrap {
+    padding: 15px;
+    max-height: 600px;
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+
+  &-validation {
+    min-height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}

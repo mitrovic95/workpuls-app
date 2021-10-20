@@ -1,6 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs-compat';
+import { Shift } from '../models/shift';
 import { environment } from '../../../../environments/environment';
 import { Employee } from '../models';
 
@@ -21,6 +22,13 @@ export class DashboardService {
   getEmployees(): Observable<Employee[]> {
     return this.http.get<Employee[]>(
       `${this.resource}/all-employees`,
+      httpOptions
+    );
+  }
+
+  getEmployeeShifts(): Observable<Shift[]> {
+    return this.http.get<Shift[]>(
+      `${this.resource}/employee-shifts`,
       httpOptions
     );
   }

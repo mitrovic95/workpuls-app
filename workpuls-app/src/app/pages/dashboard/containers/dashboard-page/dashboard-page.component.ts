@@ -2,8 +2,11 @@ import { Component, ViewChild, OnInit } from '@angular/core';
 import { SelectionModel } from '@angular/cdk/collections';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatPaginator } from '@angular/material/paginator';
+import { MatDialog } from '@angular/material/dialog';
+import { Shift } from '../../models/shift';
 import { DashboardService } from '../../services';
 import { Employee } from '../../models';
+import { ModalComponent } from './components/modal/modal.component';
 
 @Component({
   selector: 'app-dashboard-page',
@@ -11,19 +14,21 @@ import { Employee } from '../../models';
   styleUrls: ['./dashboard-page.component.scss'],
 })
 export class DashboardPageComponent implements OnInit {
-  constructor(private service: DashboardService) {}
+  constructor(private service: DashboardService, private dialog: MatDialog) {}
 
   employees: Employee[] = [];
 
-  numberOfEmployees: number = 0;
+  employeesShifts: Shift[] = [];
 
-  totalAmountPaidForRegularHours: number = 0;
+  numberOfEmployees = 0;
 
-  totalOvertimeAmountPaidForOvertimeHours: number = 0;
+  totalAmountPaidForRegularHours = 0;
 
-  totalClockedInTime: number = 0;
+  totalOvertimeAmountPaidForOvertimeHours = 0;
 
-  loader: boolean = false;
+  totalClockedInTime = 0;
+
+  loader = false;
 
   displayedColumns: string[] = [
     'select',
@@ -48,7 +53,9 @@ export class DashboardPageComponent implements OnInit {
   }
 
   initTableData() {
-    this.loader = true;
+    this.service.getEmployeeShifts().subscribe((shifts) => {
+      this.employeesShifts = shifts;
+    });
     this.service.getEmployees().subscribe((data) => {
       this.dashboardInfo(data);
       this.employees = data;
@@ -56,10 +63,14 @@ export class DashboardPageComponent implements OnInit {
       this.dataSource = new MatTableDataSource<Employee>(data);
       this.dataSource.paginator = this.paginator;
     });
+    this.loader = true;
   }
 
   calculateTotalClockedTimePerEmployee() {
     this.employees.forEach((employee) => {
+      employee.shifts = this.employeesShifts.filter(
+        (employeeShits) => employeeShits.employeeId === employee.id
+      );
       employee.totalClokedIn =
         employee.hourlyRate + employee.overtimeHourlyRate;
     });
@@ -115,10 +126,17 @@ export class DashboardPageComponent implements OnInit {
     this.selection.selected.forEach((employee) => {
       selectedEmployees.push(employee.id);
     });
-    console.log(
-      '🚀 ~ file: dashboard-page.component.ts ~ line 120 ~ DashboardPageComponent ~ openEmployeesPreview ~ selectedEmployees',
-      selectedEmployees
-    );
+
+    this.dialog.open(ModalComponent, {
+      width: '700px',
+      data: {
+        title: 'Employee',
+        employees: this.employees.filter((employee) =>
+          selectedEmployees.includes(employee.id)
+        ),
+      },
+    });
+
     return selectedEmployees;
   }
 }
